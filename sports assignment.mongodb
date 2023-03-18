@@ -1,0 +1,178 @@
+use sports
+
+db.createCollection("sports")
+db.createCollection("teams")
+db.createCollection("countries")
+
+db.sports.insertMany([
+  {
+    "_id": "sport1",
+    "name": "Soccer",
+    "popularity": 5
+  },
+  {
+    "_id": "sport2",
+    "name": "Basketball",
+    "popularity": 4
+  },
+  {
+    "_id": "sport3",
+    "name": "Tennis",
+    "popularity": 3
+  },
+  {
+    "_id": "sport4",
+    "name": "Baseball",
+    "popularity": 3
+  },
+  {
+    "_id": "sport5",
+    "name": "Golf",
+    "popularity": 2
+  },
+  {
+    "_id": "sport6",
+    "name": "Hockey",
+    "popularity": 2
+  },
+  {
+    "_id": "sport7",
+    "name": "Football",
+    "popularity": 2
+  },
+  {
+    "_id": "sport8",
+    "name": "Rugby",
+    "popularity": 1
+  },
+  {
+    "_id": "sport9",
+    "name": "Cricket",
+    "popularity": 1
+  },
+  {
+    "_id": "sport10",
+    "name": "Volleyball",
+    "popularity": 1
+  }
+])
+
+db.countries.insertMany([
+    {
+      "_id": "country1",
+      "name": "United Kingdom",
+      "continent": "Europe"
+    },
+    {
+      "_id": "country2",
+      "name": "Spain",
+      "continent": "Europe"
+    },
+    {
+      "_id": "country3",
+      "name": "Germany",
+      "continent": "Europe"
+    },
+    {
+      "_id": "country4",
+      "name": "France",
+      "continent": "Europe"
+    },
+    {
+      "_id": "country5",
+      "name": "Italy",
+      "continent": "Europe"
+    },
+    {
+      "_id": "country6",
+      "name": "Brazil",
+      "continent": "South America"
+    },
+    {
+      "_id": "country7",
+      "name": "Argentina",
+      "continent": "South America"
+    },
+    {
+      "_id": "country8",
+      "name": "United States",
+      "continent": "North America"
+    },
+    {
+      "_id": "country9",
+      "name": "Canada",
+      "continent": "North America"
+    },
+    {
+      "_id": "country10",
+      "name": "Mexico",
+      "continent": "North America"
+    }
+  ])
+
+  db.teams.insertMany([
+    {
+      "_id": "team1",
+      "name": "Manchester United",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team2",
+      "name": "Real Madrid",
+      "sport_id": "sport1",
+      "country_id": "country2"
+    },
+    {
+      "_id": "team3",
+      "name": "Barcelona",
+      "sport_id": "sport1",
+      "country_id": "country2"
+    },
+    {
+      "_id": "team4",
+      "name": "Liverpool",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team5",
+      "name": "Chelsea",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team6",
+      "name": "Arsenal",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team7",
+      "name": "Manchester City",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team8",
+      "name": "Tottenham Hotspur",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team9",
+      "name": "Everton",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    },
+    {
+      "_id": "team10",
+      "name": "Leicester City",
+      "sport_id": "sport1",
+      "country_id": "country1"
+    }
+  ])
+
+db.sports.findOne({ "_id": "sport1" })
+db.sports.updateOne({ "_id": "sport1" }, { $set: { "popularity": 6 } })
+db.teams.drop()
